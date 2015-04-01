@@ -29,6 +29,7 @@ group :development, :test do
   gem 'pry-doc'
   gem 'hirb'
   gem 'rack-mini-profiler'
+  gem 'dotenv-rails'
 end
 
 group :test do
