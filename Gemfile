@@ -27,6 +27,7 @@ group :development, :test do
   gem 'pry-rails'
   gem 'pry-doc'
   gem 'hirb'
+  gem 'rack-mini-profiler'
 end
 
 group :test do
