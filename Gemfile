@@ -21,6 +21,7 @@ end
 
 gem 'jquery-rails'
 gem 'faker'
+gem 'redis-rails'
 
 group :development, :test do
   gem 'rspec-rails'
