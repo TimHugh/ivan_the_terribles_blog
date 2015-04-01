@@ -14,7 +14,7 @@ IvanTheTerriblesBlog::Application.configure do
 
   # Cache on redis
   config.action_controller.perform_caching = true
-  config.cache_store = :redis_store
+  config.cache_store = :redis_store, ENV['REDISTOGO_URL']
 
   # Don't care if the mailer can't send
   config.action_mailer.raise_delivery_errors = false
