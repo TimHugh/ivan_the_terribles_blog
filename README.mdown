@@ -7,3 +7,25 @@ Read all my amazing posts!!!!! You can load them into the app with: `rake load:b
 Since I know you want to read them all, I designed my page to show EVERYTHING on the front page of the site!!!!!
 
 I know it is a little slow (but totes worth it!!!!)... _Do you know how I can make it faster?_
+
+## Optimization
+
+Fragment caching was added to the partials for Replies, Comments, and Posts, and the Post#index. Redis is used for caching, using Heroku's RedisToGo.
+
+Local testing immediately dropped from 1.7 min to right around 100ms (after a 3 min request filled the cache).
+
+#### First remote test run:
+
+The fragment cache was precompiled on the live server before testing started.
+
+[Graph](https://www.dropbox.com/s/jdb52h59111naot/Screen%20Shot%202015-04-01%20at%206.23.00%20PM.png?dl=0)
+
+[Full results](https://app.loadimpact.com/load-test/57aa9145-34b7-4e81-bdc8-48eadd284427)
+
+#### Second remote test run:
+
+For the second run, Unicorn was subbed in with 3 threads. The bottleneck on this site is primarily rendering, though, so the impact was fairly minimal.
+
+[Graph](https://www.dropbox.com/s/dzg06z8d07op4lt/Screen%20Shot%202015-04-01%20at%206.22.22%20PM.png?dl=0)
+
+[Full results](https://app.loadimpact.com/load-test/108a34ba-77dd-480a-b31f-d69d7c892f32)
