@@ -22,3 +22,9 @@
 .project
 __eclim_temp_Vagrantfile
 .rspec
+
+# .env
+.env
+
+# redis cache
+dump.rdb

@@ -6,6 +6,7 @@ gem 'rails', '~> 3.2.13'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'pg'
+gem 'unicorn'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -21,12 +22,15 @@ end
 
 gem 'jquery-rails'
 gem 'faker'
+gem 'redis-rails'
 
 group :development, :test do
   gem 'rspec-rails'
   gem 'pry-rails'
   gem 'pry-doc'
   gem 'hirb'
+  gem 'rack-mini-profiler'
+  gem 'dotenv-rails'
 end
 
 group :test do

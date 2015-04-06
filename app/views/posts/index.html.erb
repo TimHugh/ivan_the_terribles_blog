@@ -1,8 +1,10 @@
 <h1>Ivan the Terrible's Blog</h1>
 
-<section class="blog">
-  <%= render @posts %>
-</section>
+<% cache do %>
+  <section class="blog">
+    <%= render @posts %>
+  </section>
+<% end %>
 
 <br />
 
